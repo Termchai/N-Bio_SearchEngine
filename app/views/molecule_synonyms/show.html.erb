@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Molecule:</strong>
+  <%= @molecule_synonym.molecule %>
+</p>
+
+<p>
+  <strong>Synonym:</strong>
+  <%= @molecule_synonym.synonym %>
+</p>
+
+<%= link_to 'Edit', edit_molecule_synonym_path(@molecule_synonym) %> |
+<%= link_to 'Back', molecule_synonyms_path %>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>N-Bio Searching Molecule Webtool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default"> 
+		<div class="container-fluid"> 
+			<div class="navbar-header"> 
+				<div class="name-web">
+				    	 <%= image_tag "n-bio.jpg"%> 
+				    </div>
+				
+			</div> 
+			<div> 
+				<ul class="nav navbar-nav"> 
+					<b><li>N-Bio Molecule Searching</li></b>
+					<li><%= link_to "Molecule", molecules_path %></li>
+					<li><%= link_to "Synonyms", molecule_synonyms_path %></li> 
+					<li><%= link_to "Interact", interacts_path %></li> 
+					<li><%= link_to "Sentence", sentences_path %></li>
+					<li><%= link_to "Extract Word", extract_words_path %></li> 
+				</ul> 
+			</div> 
+		</div> 
+	</nav>
+	<%= yield %>
+
+</body>	
+</html>

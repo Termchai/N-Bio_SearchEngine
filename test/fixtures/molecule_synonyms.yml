@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  molecule_id: 
+  synonym: MyString
+
+two:
+  molecule_id: 
+  synonym: MyString

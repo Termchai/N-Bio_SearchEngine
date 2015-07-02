@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Molecule Synonyms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Synonym</th>
+      <th>Molecule</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @molecule_synonyms.each do |molecule_synonym| %>
+      <tr>
+        <td><%= molecule_synonym.id %></td>
+        <td><%= molecule_synonym.synonym %></td>
+        <td><%= molecule_synonym.molecule.name %></td>
+        <td><%= link_to 'Show', molecule_synonym %></td>
+        <td><%= link_to 'Edit', edit_molecule_synonym_path(molecule_synonym) %></td>
+        <td><%= link_to 'Destroy', molecule_synonym, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Molecule synonym', new_molecule_synonym_path %>

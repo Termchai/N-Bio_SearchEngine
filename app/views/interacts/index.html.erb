@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Interacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>M1</th>
+      <th>M2</th>
+      <th>Source</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interacts.each do |interact| %>
+      <tr>
+        <td><%= @molecules.find(interact.m1).name %></td>
+        <td><%= @molecules.find(interact.m2).name %></td>
+        <td><%= interact.source %></td>
+        <td><%= link_to 'Show', interact %></td>
+        <td><%= link_to 'Edit', edit_interact_path(interact) %></td>
+        <td><%= link_to 'Destroy', interact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interact', new_interact_path %>

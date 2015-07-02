@@ -1,0 +1,23 @@
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Synonym</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @molecule.each do |molecule| %>
+        <tr data-link="<%= 'molecule/' + molecule.id.to_s %>" style="cursor: pointer;">
+          <td><%= molecule.id %></td>
+          <td><%= molecule.name %></td>
+          <td><%= @hash[molecule.name] %></td>
+          <td><%= link_to 'ลบพื้นที่เพาะปลูก', molecule, class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'ต้องการที่จะลบพื้นที่เพาะปลูกใช่หรือไม่?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>

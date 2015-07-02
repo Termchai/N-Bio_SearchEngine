@@ -1,0 +1,2 @@
+module MoleculeSynonymsHelper
+end

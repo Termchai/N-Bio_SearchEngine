@@ -1,0 +1,29 @@
+<%= form_for(@interact) do |f| %>
+  <% if @interact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interact.errors.count, "error") %> prohibited this interact from being saved:</h2>
+
+      <ul>
+      <% @interact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :m1 %><br>
+    <%= collection_select :interact, :m1, @molecules, :id, :name, {} , {} %>
+  </div>
+  <div class="field">
+    <%= f.label :m2 %><br>
+    <%= collection_select :interact, :m2, @molecules, :id, :name, {} , {} %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

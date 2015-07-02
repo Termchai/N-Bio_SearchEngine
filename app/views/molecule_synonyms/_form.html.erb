@@ -1,0 +1,25 @@
+<%= form_for(@molecule_synonym) do |f| %>
+  <% if @molecule_synonym.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@molecule_synonym.errors.count, "error") %> prohibited this molecule_synonym from being saved:</h2>
+
+      <ul>
+      <% @molecule_synonym.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :synonym %><br>
+    <%= f.text_field :synonym %>
+  </div>
+  <div class="field">
+    <%= f.label :molecule %><br>
+    <%= collection_select :molecule_synonym, :molecule_id, @molecules, :id, :name, {} , {} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
