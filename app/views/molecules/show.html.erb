@@ -1,9 +1,61 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>Name:</strong>
-  <%= @molecule.name %>
+  <center><font size = "14"><strong>Searching for:</strong>
+  <%= @molecule.name + "(" + @molecule.get_synonym + ")" %></font size></center><br>
+
+  <strong>Number of Output:</strong>
+  <%= @num %><br>
+
+
+  <strong>Time Spending:</strong>
+  <%= @time %><br>
+
+
+  <strong>Duplicate Word:</strong>
+
+<table border="1" style= "width:20%;margin-left:3%;">
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Frequency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dup.each do |key, value| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+  <strong>Result:</strong>
+
+  <table border="1" style= "width:80%;margin-left:3%;">
+  <thead>
+    <tr>
+      <th>Interesting word</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @res.each do |arr| %>
+      <tr>
+        <td><%= arr[0] %></td>
+        <td><%= link_to arr[1].to_s, arr[1], :target => "_blank" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 </p>
 
-<%= link_to 'Edit', edit_molecule_path(@molecule) %> |
+
 <%= link_to 'Back', molecules_path %>

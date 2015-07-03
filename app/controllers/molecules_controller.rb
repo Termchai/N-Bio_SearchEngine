@@ -22,7 +22,11 @@ class MoleculesController < ApplicationController
   # GET /molecules/1
   # GET /molecules/1.json
   def show
-
+    callback = @molecule.search
+    @num = callback[:count]
+    @time = callback[:time]
+    @dup = callback[:dup]
+    @res = callback[:res]
   end
 
   # GET /molecules/new
@@ -41,7 +45,7 @@ class MoleculesController < ApplicationController
 
     respond_to do |format|
       if @molecule.save
-        format.html { redirect_to @molecule, notice: 'Molecule was successfully created.' }
+        format.html { redirect_to molecules_path, notice: 'Molecule was successfully created.' }
         format.json { render :show, status: :created, location: @molecule }
       else
         format.html { render :new }
@@ -55,7 +59,7 @@ class MoleculesController < ApplicationController
   def update
     respond_to do |format|
       if @molecule.update(molecule_params)
-        format.html { redirect_to @molecule, notice: 'Molecule was successfully updated.' }
+        format.html { redirect_to molecules_path, notice: 'Molecule was successfully updated.' }
         format.json { render :show, status: :ok, location: @molecule }
       else
         format.html { render :edit }

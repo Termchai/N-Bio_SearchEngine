@@ -21,7 +21,7 @@
         <td><%= @hash[molecule.name] %></td>
         <td><%= molecule.get_interacts %></td>
         <td style= "width:30%">
-          <%= link_to 'Show', molecule %>
+          <%= link_to 'Search', molecule, :target => "_blank" %>
           <%= link_to 'Edit', edit_molecule_path(molecule) %>
           <%= link_to 'Destroy', molecule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
