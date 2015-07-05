@@ -17,11 +17,11 @@
     <% @molecules.each do |molecule| %>
       <tr>
         <td><%= molecule.id %></td>
-        <td><%= link_to molecule.name, molecule %></td>
+        <td><%= molecule.name %></td>
         <td><%= @hash[molecule.name] %></td>
         <td><%= molecule.get_interacts %></td>
         <td style= "width:30%">
-          <%= link_to 'Search', molecule, :target => "_blank" %>
+          <%= link_to 'Search', molecule %>
           <%= link_to 'Edit', edit_molecule_path(molecule) %>
           <%= link_to 'Destroy', molecule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

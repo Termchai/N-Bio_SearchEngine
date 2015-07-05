@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701061559) do
+ActiveRecord::Schema.define(version: 20150703152907) do
 
   create_table "extract_words", force: :cascade do |t|
     t.string   "word"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20150701061559) do
 
   create_table "molecules", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string   "name"
+    t.string   "time_spend"
+    t.string   "duplicate"
+    t.string   "output"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

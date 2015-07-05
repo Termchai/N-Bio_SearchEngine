@@ -107,8 +107,8 @@ class Molecule < ActiveRecord::Base
 	# 	 "determinant","proteins", "exits"]
 	# end
 
-	def search
-
+	def search temp_result
+		Thread.new do
 		querys = self.query
 		sentence = self.sentence
 		extract_word = self.extract_word
@@ -127,7 +127,7 @@ class Molecule < ActiveRecord::Base
 		  Google::Search::Web.new do |search|
 		    search.query = query
 		    search.size = :large
-		  end.first(5).each { |item| 
+		  end.first(3).each { |item| 
 
 		if set.include? item.uri.to_s
 			next
@@ -145,6 +145,7 @@ class Molecule < ActiveRecord::Base
 				# puts s
 				s = self.extract(s, extract_word)
 				s = s.delete!("\n")
+				s = s.delete(",")
 				# puts s.length
 			sentence.each do |q|
 				querys.each do |qq|
@@ -214,7 +215,12 @@ class Molecule < ActiveRecord::Base
 
 		callback
 
-
+		temp_result.time_spend = self.time_diff(Time.now, time)
+		temp_result.duplicate = hash.first(10).to_s
+		temp_result.output = result.to_s
+		temp_result.save
+		# Result.create(name:name + ", " + get_synonym, time_spend:self.time_diff(Time.now,time), duplicate:hash.first(10).to_s, output:result.to_s)
+	end
 	end
 
 	def extract str, ext

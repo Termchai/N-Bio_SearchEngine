@@ -37,7 +37,7 @@ arr_ext = ["a","are","the","is","of","on",
 		 "factor","site","type","this","that",
 		 "only", "contains", "and", "  ","also","termed","design",
 		 "from", "as", "/", "protein", "complex", "dna", "between",
-		 "determinant","proteins", "exits"]
+		 "determinant","proteins", "exits", ","]
 
 arr_ext.each do |ext|
 	ExtractWord.create(word:ext)

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Results</h1>
+
+<table border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Molecule Name</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.reverse.each do |result| %>
+      <tr>
+        <td><%= result.created_at.in_time_zone("Japan").to_s[0..-7] %></td>
+        <td><%= result.get_name %></td>
+        <td><%= result.get_status %></td>
+        <td><%= link_to 'View Result', result %>
+        <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Result', new_result_path %>

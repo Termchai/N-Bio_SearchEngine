@@ -22,11 +22,14 @@ class MoleculesController < ApplicationController
   # GET /molecules/1
   # GET /molecules/1.json
   def show
-    callback = @molecule.search
-    @num = callback[:count]
-    @time = callback[:time]
-    @dup = callback[:dup]
-    @res = callback[:res]
+    result = Result.create(name: @molecule.name + ", " + @molecule.get_synonym)
+    @molecule.search result
+
+    redirect_to results_path
+    # @num = callback[:count]
+    # @time = callback[:time]
+    # @dup = callback[:dup]
+    # @res = callback[:res]
   end
 
   # GET /molecules/new

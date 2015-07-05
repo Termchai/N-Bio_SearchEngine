@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :results
+
   resources :extract_words
 
   # get 'search/index'
