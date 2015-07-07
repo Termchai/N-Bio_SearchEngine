@@ -5,6 +5,7 @@
 <table class="table" border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Time</th>
       <th>Molecule Name</th>
       <th>Status</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @results.reverse.each do |result| %>
       <tr>
+        <td><%= result.id%></td>
         <td><%= result.created_at.in_time_zone("Japan").to_s[0..-7] %></td>
         <td><%= result.get_name %></td>
         <td>

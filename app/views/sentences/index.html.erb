@@ -5,7 +5,8 @@
 <table class="table"  border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
   <thead>
     <tr>
-      <th>Sen</th>
+      <th>ID</th>
+      <th>Sentence</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
   <tbody>
     <% @sentences.each do |sentence| %>
       <tr>
+        <td><%= sentence.id %></td>
         <td><%= sentence.sen %></td>
         <td><%= link_to 'Show', sentence %></td>
         <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>

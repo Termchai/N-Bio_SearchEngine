@@ -5,8 +5,9 @@
 <table  class="table"  border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
   <thead>
     <tr>
-      <th>M1</th>
-      <th>M2</th>
+      <th>ID</th>
+      <th>Molecule_1</th>
+      <th>Molecule_2</th>
       <th>Source</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
   <tbody>
     <% @interacts.each do |interact| %>
       <tr>
+        <td><%= interact.id %></td>
         <td><%= @molecules.find(interact.m1).name %></td>
         <td><%= @molecules.find(interact.m2).name %></td>
         <td><%= interact.source %></td>

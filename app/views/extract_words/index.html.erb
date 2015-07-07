@@ -5,6 +5,7 @@
 <table  class="table"  border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Word</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @extract_words.each do |extract_word| %>
       <tr>
+        <td><%= extract_word.id%></td>
         <td><%= extract_word.word %></td>
         <td><%= link_to 'Show', extract_word %></td>
         <td><%= link_to 'Edit', edit_extract_word_path(extract_word) %></td>
