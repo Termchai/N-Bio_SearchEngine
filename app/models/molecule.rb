@@ -28,7 +28,7 @@ class Molecule < ActiveRecord::Base
 	end
 
 	def query
-		arr = [name]
+		arr = [name.downcase]
 		molecule_synonyms.each do |s|
 			arr.push(s.synonym.downcase)
 		end
