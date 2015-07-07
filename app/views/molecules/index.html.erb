@@ -2,7 +2,7 @@
 
 <h1><center>Listing Molecules</centre></h1>
 
-<table border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
+<table class="table" border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
   <thead>
     <tr>
       <th>ID</th>
@@ -21,7 +21,7 @@
         <td><%= @hash[molecule.name] %></td>
         <td><%= molecule.get_interacts %></td>
         <td style= "width:30%">
-          <%= link_to 'Search', molecule %>
+          <%= link_to 'Search', molecule, data: { confirm: 'Searching for "' + molecule.name + '"' } %>
           <%= link_to 'Edit', edit_molecule_path(molecule) %>
           <%= link_to 'Destroy', molecule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
