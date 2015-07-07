@@ -21,9 +21,10 @@
         <td><%= @hash[molecule.name] %></td>
         <td><%= molecule.get_interacts %></td>
         <td style= "width:30%">
-          <%= link_to 'Search', molecule, data: { confirm: 'Searching for "' + molecule.name + '"' } %>
-          <%= link_to 'Edit', edit_molecule_path(molecule) %>
-          <%= link_to 'Destroy', molecule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Search', molecule, style:"margin-left:20px", class: "glyphicon glyphicon-search", data: { confirm: 'Searching for "' + molecule.name + '"' } %>
+          <%= link_to 'Edit', edit_molecule_path(molecule), style:"margin-left:20px", class: "glyphicon glyphicon-wrench"  %>
+          <%= link_to 'Destroy', molecule, style:"margin-left:20px", class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Molecule', new_molecule_path %>
+<%= link_to 'New Molecule', new_molecule_path, class: "btn btn-default" %>
