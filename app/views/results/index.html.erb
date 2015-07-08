@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @results.reverse.each do |result| %>
+    <% @results.each do |result| %>
       <tr>
         <td><%= result.id%></td>
         <td><%= result.created_at.in_time_zone("Japan").to_s[0..-7] %></td>
