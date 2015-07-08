@@ -62,7 +62,11 @@ class Molecule < ActiveRecord::Base
 		arr_2 = []
 
 		querys.each do |a|
-			arr_2.push(a)
+			arr_2.push(a + " bio")
+		end
+
+		querys.each do |a|
+			arr_2.push(a + " protein")
 		end
 
 		querys.each do |a|
@@ -159,20 +163,20 @@ class Molecule < ActiveRecord::Base
 		}
 
 		hash = hash.sort_by {|_key, value| value}.reverse
-		puts hash.first(10)
+		puts hash.first(20)
 
 		puts result.to_s
 
 		callback = Hash.new
 		callback[:count] = count.to_s
 		callback[:time] = self.time_diff(Time.now,time)
-		callback[:dup] = hash.first(10)
+		callback[:dup] = hash.first(20)
 		callback[:res] = result
 
 		callback
 
 		temp_result.time_spend = self.time_diff(Time.now, time)
-		temp_result.duplicate = hash.first(10).to_s
+		temp_result.duplicate = hash.first(20).to_s
 		temp_result.output = result.to_s
 		temp_result.save
 		# Result.create(name:name + ", " + get_synonym, time_spend:self.time_diff(Time.now,time), duplicate:hash.first(10).to_s, output:result.to_s)
