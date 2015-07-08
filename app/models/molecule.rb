@@ -32,8 +32,8 @@ class Molecule < ActiveRecord::Base
 		molecule_synonyms.each do |s|
 			arr.push(s.synonym.downcase)
 		end
-		arr
 
+		arr
 	end
 
 	def sentence
@@ -51,61 +51,7 @@ class Molecule < ActiveRecord::Base
 		end
 		arr
 	end
-	# def query 
-	# 	["interleukin 6",
-	# 	 "il6",
-	# 	 "il 6", 
-	# 	 "il-6"]
-	# end
 
-	# def self.query 
-	# 	["hist1h1a",
-	# 	 "histon h1a",
-	# 	 "histh1a",
-	# 	 "histone", 
-	# 	 "h1a",
-	# 	 "histones",
-	# 	 "h1"]
-	# end
-
-	# def self.query 
-	# 	["prnp",
-	# 	 "prion",
-	# 	 "prp",
-	# 	 "cd230"]
-	# end
-
-	# def self.query 
-	# 	["myoglobin",
-	# 	 "mb"]
-	# end
-
-	# def self.query 
-	# 	["nuclease s",
-	# 	 "nucs"]
-	# end
-
-	# def sentence
-	# 	 ["interact",
-	# 	 "bind",
-	# 	 "adjacent",
-	# 	 "join",
-	# 	 "connect",
-	# 	 "against",
-	# 	 "attach"]
-	# end
-
-	# def extract_word
-	# 	["a","are","the","is","of","on",
-	# 	 "an","for","has","have","been",
-	# 	 "shown","be","begin","with","make",
-	# 	 "so","when","to","begin","in","half",
-	# 	 "full","it","then","which","upon","see",
-	# 	 "factor","site","type","this","that",
-	# 	 "only", "contains", "and", "  ","also","termed","design",
-	# 	 "from", "as", "/", "protein", "complex", "dna", "between",
-	# 	 "determinant","proteins", "exits"]
-	# end
 
 	def search temp_result
 		Thread.new do
@@ -113,13 +59,23 @@ class Molecule < ActiveRecord::Base
 		sentence = self.sentence
 		extract_word = self.extract_word
 
+		arr_2 = []
+
+		querys.each do |a|
+			arr_2.push(a)
+		end
+
+		querys.each do |a|
+			arr_2.push(a + " molecule")
+		end
+
 
 		result = Array.new
 		set = Set.new
 		hash = Hash.new(0)
 		count = 0;
 		time = Time.now
-		querys.each do |query|
+		arr_2.each do |query|
 		  temp = query
 		  puts "========================================================"
 		  puts "searching for #{query}"
