@@ -87,7 +87,7 @@ class Molecule < ActiveRecord::Base
 		  Google::Search::Web.new do |search|
 		    search.query = query
 		    search.size = :large
-		  end.first(30).each { |item| 
+		  end.first(15).each { |item| 
 
 		if set.include? item.uri.to_s
 			next
