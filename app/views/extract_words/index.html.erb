@@ -2,28 +2,30 @@
 
 <h1><center>Listing Ignoring Words</centre></h1>
 
-<table  class="table"  border="1" style= "width:80%;margin-left:10%; margin-right:10%;">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Ignoring Word</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @extract_words.each do |extract_word| %>
+  <table  class="table hoverable">
+    <thead>
       <tr>
-        <td><%= extract_word.id%></td>
-        <td><%= extract_word.word %></td>
-        <td><%= link_to 'Show', extract_word %></td>
-        <td><%= link_to 'Edit', edit_extract_word_path(extract_word) %></td>
-        <td><%= link_to 'Destroy', extract_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="center-align">ID</th>
+        <th class="center-align">Ignoring Word</th>
+        <th class="center-align" colspan="3">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @extract_words.each do |extract_word| %>
+      <tr>
+        <td class="center-align"><%= extract_word.id%></td>
+        <td class="center-align"><%= extract_word.word %></td>
+        <td class="center-align">
+          <%= link_to link_to raw('<i class="material-icons">visibility</i>Show'), extract_word %>
+          <%= link_to link_to raw('<i class="material-icons">mode_edit</i>Edit'), edit_extract_word_path(extract_word) %>
+          <%= link_to link_to raw('<i class="material-icons">delete</i>Destroy'), extract_word, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Ignoring Word', new_extract_word_path, class: "btn btn-default" %>
+  <br>
+
+  <%= link_to 'New Ignoring Word', new_extract_word_path, class: "btn btn-default" %>

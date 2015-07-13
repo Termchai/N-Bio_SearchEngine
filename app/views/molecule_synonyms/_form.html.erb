@@ -20,6 +20,6 @@
     <%= collection_select :molecule_synonym, :molecule_id, @molecules, :id, :name, {} , {} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn'%>
   </div>
 <% end %>

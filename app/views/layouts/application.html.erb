@@ -6,35 +6,46 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=320, initial-scale=1.0"/>
 
+<style media="screen">
+  html, body {
+    min-width: 1020px;
+  }
+</style>
 </head>
 <body>
-	<nav class="navbar navbar-default"> 
-		<div class="container-fluid"> 
-			<div class="navbar-header"> 
-				<div class="name-web">
-				    	 <%= image_tag "n-bio.jpg"%> 
-				    </div>
-				
-			</div> 
-			<div> 
-				<ul class="nav navbar-nav"> 
-					<b><li>N-Bio Molecule Searching</li></b>
-					<li><%= link_to "Molecule", molecules_path %></li>
-					<li><%= link_to "Synonyms", molecule_synonyms_path %></li> 
-					<li><%= link_to "Interact", interacts_path %></li> 
-					<li><%= link_to "Attentive Word", sentences_path %></li>
-					<li><%= link_to "Ignoring Word", extract_words_path %></li>
-					<li><%= link_to "Result", results_path %></li>  
-				</ul> 
-			</div> 
-		</div> 
-	</nav>
-	<%= yield %>
+  <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
 
-</body>	
+
+  <div class="row logo">
+    <%= image_tag "logo.png", class:'img-logo center-align'%>
+
+  </div>
+  <nav >
+    <div class="nav-wrapper">
+      <ul class="left">
+        <!-- <b><li>N-Bio Molecule Searching</li></b> -->
+        <li><%= link_to "Molecule", molecules_path %></li>
+        <li><%= link_to "Synonyms", molecule_synonyms_path %></li>
+        <li><%= link_to "Interact", interacts_path %></li>
+        <li><%= link_to "Attentive Word", sentences_path %></li>
+        <li><%= link_to "Ignoring Word", extract_words_path %></li>
+        <li><%= link_to "Result", results_path %></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
 </html>

@@ -13,5 +13,30 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+@import "materialize";
+@import "materialize/components/sideNav";
+
+
+.logo {
+  width: 50%;
+}
+.img-logo {
+  width:100%;
+  height: 100%;
+  // margin-left: 50%;
+}
+
+.container {
+  margin-bottom: 5%;
+}
+
+nav {
+  background-color: rgb(5, 130, 184);
+  ul a {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+}

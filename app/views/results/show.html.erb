@@ -1,21 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <center><font size = "8"><strong>Searching for:</strong>
-  <%= @name %></font size></center><br>
 
-  <strong>Number of Output:</strong>
-  <%= @num %><br>
+  <h3 class="center-align">Searching for: <%= @name %></h3>
+
+  <h5>Number of Output: <%= @num %></h5><br>
 
 
-  <strong>Time Spending:</strong>
-  <%= @time %><br>
+  <h5>Time Spending: <%= @time %></h5><br>
 
 
-  <strong>Duplicate Word:</strong>
+  <h5>Duplicate Word:</h5>
 
-<table class = "table" border="1" style= "width:20%;margin-left:3%;">
+<table class = "hoverable">
   <thead>
     <tr>
       <th>Word</th>
@@ -33,10 +30,10 @@
   </tbody>
 </table>
 
+<hr>
+  <h4>Result:</h4>
 
-  <strong>Result:</strong>
-
-  <table class="table" border="1" style= "width:80%;margin-left:3%;">
+  <table class="table hoverable">
   <thead>
     <tr>
       <th>Interesting word</th>
@@ -55,7 +52,7 @@
 </table>
 
 
-</p>
+
 
 
 <%= link_to 'Back', results_path, class: "btn btn-default" %>
