@@ -21,7 +21,6 @@
         <td><%= @molecules.find(interact.m2).name %></td>
         <td><%= interact.source %></td>
         <td><%= link_to raw('<i class="material-icons">visibility</i>Show'), interact %></td>
-        <td><%= link_to raw('<i class="material-icons">mode_edit</i>Edit'), edit_interact_path(interact) %></td>
         <td><%= link_to raw('<i class="material-icons">delete</i>Destroy'), interact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

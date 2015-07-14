@@ -11,6 +11,7 @@ class InteractsController < ApplicationController
   # GET /interacts/1
   # GET /interacts/1.json
   def show
+    @molecules = Molecule.all
   end
 
   # GET /interacts/new

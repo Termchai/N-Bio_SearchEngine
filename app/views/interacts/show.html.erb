@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>M1:</strong>
-  <%= @interact.m1 %>
+  <strong>Molecule_1:</strong>
+  <%= @molecules.find(@interact.m1).name %>
 </p>
 
 <p>
-  <strong>M2:</strong>
-  <%= @interact.m2 %>
+  <strong>Molecule_2:</strong>
+  <%= @molecules.find(@interact.m2).name %>
 </p>
 
 <p>
@@ -15,5 +15,4 @@
   <%= @interact.source %>
 </p>
 
-<%= link_to 'Edit', edit_interact_path(@interact) %> |
 <%= link_to 'Back', interacts_path %>

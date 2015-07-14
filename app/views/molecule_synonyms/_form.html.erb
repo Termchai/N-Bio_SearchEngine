@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :molecule %><br>
-    <%= collection_select :molecule_synonym, :molecule_id, @molecules, :id, :name, {} , {} %>
+    <%= collection_select :molecule_synonym, :molecule_id, @molecules, :id, :name, {} , {class: "collection"} %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn'%>

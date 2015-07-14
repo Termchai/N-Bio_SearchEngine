@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :m1 %><br>
-    <%= collection_select :interact, :m1, @molecules, :id, :name, {} , {} %>
+    <%= collection_select :interact, :m1, @molecules, :id, :name, {} , {class: "collection"} %>
   </div>
   <div class="field">
     <%= f.label :m2 %><br>
-    <%= collection_select :interact, :m2, @molecules, :id, :name, {} , {} %>
+    <%= collection_select :interact, :m2, @molecules, :id, :name, {} , {class: "collection"} %>
   </div>
   <div class="field">
     <%= f.label :source %><br>
